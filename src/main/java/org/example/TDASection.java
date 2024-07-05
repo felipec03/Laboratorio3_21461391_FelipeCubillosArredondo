@@ -28,4 +28,14 @@ public class TDASection {
     public float getCost() {
         return cost;
     }
+
+    @Override
+    public String toString() {
+        return "TDASection{" +
+                "point1=" + point1 +
+                ", point2=" + point2 +
+                ", distance=" + distance +
+                ", cost=" + cost +
+                '}';
+    }
 }
