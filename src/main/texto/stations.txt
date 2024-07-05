@@ -1,0 +1,6 @@
+0,"San Pablo",t,5
+1,"USACH",r,5
+2,"Estación Central",r,5
+3,"Los Heroes",c,5
+4,"Santa Ana",c,5
+5,"Los Domínicos",t,5

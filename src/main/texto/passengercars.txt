@@ -1,0 +1,6 @@
+TDAPassengerCar pc1 = new TDAPassengerCar(0, 5, "ACME", "HomeroSimpson", CarType.t);
+TDAPassengerCar pc2 = new TDAPassengerCar(1, 5, "ACME", "HomeroSimpson", CarType.r);
+TDAPassengerCar pc3 = new TDAPassengerCar(2, 5, "ACME", "HomeroSimpson", CarType.r);
+TDAPassengerCar pc4 = new TDAPassengerCar(3, 5, "ACME", "HomeroSimpson", CarType.r);
+TDAPassengerCar pc5 = new TDAPassengerCar(4, 5, "ACME", "HomeroSimpson", CarType.r);
+TDAPassengerCar pc6 = new TDAPassengerCar(5, 5, "ACME", "HomeroSimpson", CarType.t);
