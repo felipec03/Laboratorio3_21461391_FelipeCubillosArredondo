@@ -66,6 +66,20 @@ public class Main {
         }
         System.out.println("SECTIONS PRINTED SUCCESFULY!");
 
+        Scanner archivoLineas = new Scanner(new File("src/main/texto/lineas.txt"));
+        archivoLineas.useDelimiter("-|\n");
+
+        TDALine[] lineArray = new TDALine[0];
+        while(archivoLineas.hasNext()){
+            int newId = archivoLineas.nextInt();
+            String newName = archivoLineas.next();
+            String newType = archivoLineas.next();
+            while(archivoLineas.hasNextInt() ){
+                int sectionIndex = archivoLineas.nextInt();
+                TDASection newSection = sectionArray[sectionIndex];
+            }
+        }
+
         System.out.println("PROGRAM HAS FINISHED EXECUTING.");
     }
 }
