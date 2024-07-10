@@ -1,6 +1,15 @@
-TDAPassengerCar pc1 = new TDAPassengerCar(0, 5, "ACME", "HomeroSimpson", CarType.t);
-TDAPassengerCar pc2 = new TDAPassengerCar(1, 5, "ACME", "HomeroSimpson", CarType.r);
-TDAPassengerCar pc3 = new TDAPassengerCar(2, 5, "ACME", "HomeroSimpson", CarType.r);
-TDAPassengerCar pc4 = new TDAPassengerCar(3, 5, "ACME", "HomeroSimpson", CarType.r);
-TDAPassengerCar pc5 = new TDAPassengerCar(4, 5, "ACME", "HomeroSimpson", CarType.r);
-TDAPassengerCar pc6 = new TDAPassengerCar(5, 5, "ACME", "HomeroSimpson", CarType.t);
+0-5-ACME-HomeroSimpson-t
+1-5-ACME-HomeroSimpson-r
+2-5-ACME-HomeroSimpson-r
+3-5-ACME-HomeroSimpson-r
+4-5-ACME-HomeroSimpson-r
+5-5-ACME-HomeroSimpson-t
+6-4-Samsung-Hueachimingo-t
+7-4-Samsung-Hueachimingo-r
+8-4-Samsung-Hueachimingo-r
+9-4-Samsung-Hueachimingo-r
+10-4-Samsung-Hueachimingo-r
+11-4-Samsung-Hueachimingo-r
+12-4-Samsung-Hueachimingo-r
+13-4-Samsung-Hueachimingo-r
+14-4-Samsung-Hueachimingo-t

@@ -1,1 +1,2 @@
-TDATrain t1 = new TDATrain(0, "HomeroSimpson", 4,5, new ArrayList<TDAPassengerCar>());
+0-HomeroSimpson-4-5-0-5
+1-Weachimingo-6-5-6-14

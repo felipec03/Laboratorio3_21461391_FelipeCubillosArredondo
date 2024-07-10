@@ -93,4 +93,14 @@ public class TDALine {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "TDALine{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", railType='" + railType + '\'' +
+                ", sectionList=" + sectionList +
+                '}';
+    }
 }
