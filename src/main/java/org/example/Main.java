@@ -63,12 +63,6 @@ public class Main {
         }
         archivoStations.close();
 
-        System.out.println("PRINTING STATIONS:");
-        for(TDAStation station : stationArray){
-            System.out.println(station);
-        }
-        System.out.println("STATIONS PRINTED SUCCESFULY!");
-
         // ARCHIVO SECCIONES
         Scanner archivoSections = new Scanner(new File("src/main/texto/sections.txt"));
         archivoSections.useDelimiter(delimitador);
@@ -85,12 +79,6 @@ public class Main {
         }
         archivoSections.close();
 
-        System.out.println("PRINTING SECTIONS:");
-        for (TDASection section : sectionArray){
-            System.out.println(section);
-        }
-        System.out.println("SECTIONS PRINTED SUCCESFULY!");
-
         // ARCHIVO LÍNEAS DE METRO
         Scanner archivoLineas = new Scanner(new File("src/main/texto/lines.txt"));
         archivoLineas.useDelimiter(delimitador);
@@ -101,26 +89,20 @@ public class Main {
             String newName = archivoLineas.next();
             String newType = archivoLineas.next();
             List<TDASection> newSectionList = new ArrayList<>();
-            String[] indexSectionList = (archivoLineas.nextLine()).split("-");
+
+            int firstRange = archivoLineas.nextInt();
+            int lastRange = archivoLineas.nextInt();
 
             TDALine newLine = new TDALine(newId, newName, newType, newSectionList);
 
-            // Se arregla archivo de lectura para inserción de secciones.
-            for (String index : indexSectionList){
-                if(!(index.isEmpty())){
-                    int realIndex = Integer.parseInt(index);
-                    System.out.println(realIndex);
-                }
+            while(lastRange >= firstRange){
+                newLine = newLine.lineAddSection(sectionArray[firstRange]);
+                firstRange++;
             }
 
             lineArray = addLine(lineArray, newLine);
-
-            for(TDALine line : lineArray){
-                System.out.println(line.toString());
-            }
         }
         archivoLineas.close();
-        System.out.println("PROGRAM HAS FINISHED EXECUTING.");
 
         // ARCHIVO DE CARROS
         Scanner archivoPcars = new Scanner(new File("src/main/texto/passengercars.txt"));
@@ -137,12 +119,6 @@ public class Main {
             TDAPassengerCar newPcar = new TDAPassengerCar(newId, newPassengerCapacity, newModel, newTrainMaker, newCarType);
             pcarArray = addPcar(pcarArray, newPcar);
         }
-
-        System.out.println("PRINTING PASSENGER CARS:");
-        for(TDAPassengerCar passengerCar : pcarArray){
-            System.out.println(passengerCar);
-        }
-        System.out.println("PASSENGER CARS PRINTED SUCCESFULY!");
         archivoPcars.close();
 
         // ARCHIVO TRAINS
@@ -152,13 +128,9 @@ public class Main {
 
         while (archivoTrains.hasNext()){
             int newId = archivoTrains.nextInt();
-            System.out.println("Id: " +newId);
             String newTrainMaker = archivoTrains.next();
-            System.out.println("Name: " + newTrainMaker);
             float newSpeed = archivoTrains.nextFloat();
-            System.out.println("Speed: " + newSpeed);
             float newStationStayTime = archivoTrains.nextFloat();
-            System.out.println("Stay Time: " + newStationStayTime);
 
             List<TDAPassengerCar> newPcarList = new ArrayList<>();
 
@@ -167,18 +139,19 @@ public class Main {
 
             TDATrain newTrain = new TDATrain(newId, newTrainMaker, newSpeed, newStationStayTime, newPcarList);
 
+            int position = 0;
             while(lastRange >= firstRange){
-                System.out.println(pcarArray[firstRange]);
-                //newTrain = newTrain.addCar(pcarArray[firstRange], firstRange);
+                newTrain = newTrain.addCar(pcarArray[firstRange], position);
                 firstRange++;
+                position++;
             }
-
             trainArray = addTrain(trainArray, newTrain);
         }
         archivoTrains.close();
 
-        for(TDATrain train : trainArray){
-            System.out.println(train.traintoString());
-        }
+        Menu menu = new Menu();
+        menu.startMenu();
+
+        System.out.println("PROGRAM HAS FINISHED EXECUTING.");
     }
 }
