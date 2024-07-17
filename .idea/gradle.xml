@@ -8,13 +8,12 @@
         <option name="gradleJvm" value="semeru-11" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$" />
+            <option value="$USER_HOME$/Universidad/Quinto Semestre/Paradigmas de Programación/Paradigma Orientado a Objetos/Laboratorio3_21461391_FelipeCubillosArredondo" />
           </set>
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$USER_HOME$/Universidad/Quinto Semestre/Paradigmas de Programación/Paradigma Orientado a Objetos/Laboratorio3_21461391_FelipeCubillosArredondo" />
-        <option name="gradleJvm" value="semeru-11" />
         <option name="modules">
           <set>
             <option value="$USER_HOME$/Universidad/Quinto Semestre/Paradigmas de Programación/Paradigma Orientado a Objetos/Laboratorio3_21461391_FelipeCubillosArredondo" />

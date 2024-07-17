@@ -103,16 +103,64 @@ public class Menu {
                     else {
                         System.out.println("No es una línea válida.");
                     }
-
                     break;
                 case 6:
                     System.out.println("Elegido trainAddCar!");
+
+                    Scanner idF = new Scanner(System.in);
+                    System.out.println("Introduzca el ID del tren a modificar: ");
+                    int trainIDF= Integer.parseInt(input.nextLine());
+
+                    System.out.println("Se ha elegido el siguiente tren: ");
+                    System.out.println(trainArray[trainIDF].traintoString());
+
+                    Scanner pcarID = new Scanner(System.in);
+                    System.out.println("Introduzca el ID del carro a introducir en tren de " + trainArray[trainIDF].getTrainMaker() + ": ");
+                    int pcarIDInt= Integer.parseInt(input.nextLine());
+
+                    Scanner position = new Scanner(System.in);
+                    System.out.println("Introduzca la posición: ");
+                    int positionInt= Integer.parseInt(input.nextLine());
+
+                    trainArray[trainIDF] = trainArray[trainIDF].addCar(pcarArray[pcarIDInt], positionInt);
+
+                    System.out.println("Tren actualizado: ");
+                    System.out.println(trainArray[trainIDF].traintoString());
                     break;
                 case 7:
                     System.out.println("Elegido trainRemoveCar!");
+
+                    Scanner idG = new Scanner(System.in);
+                    System.out.println("Introduzca el ID del tren a modificar: ");
+                    int trainIDG= Integer.parseInt(input.nextLine());
+
+                    System.out.println("Se ha elegido el siguiente tren: ");
+                    System.out.println(trainArray[trainIDG].traintoString());
+
+                    Scanner positionRemove = new Scanner(System.in);
+                    System.out.println("Introduzca la posición: ");
+                    int positionRemoveInt= Integer.parseInt(input.nextLine());
+
+                    trainArray[trainIDG] = trainArray[trainIDG].removeCar(positionRemoveInt);
+
+                    System.out.println("Tren actualizado: ");
+                    System.out.println(trainArray[trainIDG].traintoString());
+
                     break;
                 case 8:
                     System.out.println("Elegido isTrain!");
+
+                    Scanner idH = new Scanner(System.in);
+                    System.out.println("Introduzca el ID del tren a verificar: ");
+                    int trainIDH= Integer.parseInt(input.nextLine());
+
+                    if(trainArray[trainIDH].isTrain()){
+                        System.out.println("Es un tren válido!");
+                    }
+                    else {
+                        System.out.println("No es un tren válido...");
+                    }
+
                     break;
                 case 9:
                     System.out.println("Elegido fetchCapacity!");
