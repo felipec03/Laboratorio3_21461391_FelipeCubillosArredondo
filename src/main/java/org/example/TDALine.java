@@ -1,8 +1,6 @@
 package org.example;
 
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class TDALine {
     int id;
@@ -40,26 +38,33 @@ public class TDALine {
         }
         return output;
     }
-
     List<TDASection> getSubsection(String point1, String point2){
-        int firstIndex = 0;
-        int lastIndex = 0;
-        int counter = 0;
-        for(TDASection section : sectionList){
-            if((section.getPoint1()).getName().equals(point1)){
-                firstIndex = counter;
+        try{
+            int firstIndex = 0;
+            int lastIndex = 0;
+            int counter = 0;
+            for(TDASection section : sectionList){
+                if((section.getPoint1()).getName().equals(point1)){
+                    firstIndex = counter;
+                }
+                if((section.getPoint2()).getName().equals(point2) ){
+                    lastIndex = counter;
+                }
+                counter++;
             }
-            if((section.getPoint2()).getName().equals(point2) ){
-                lastIndex = counter;
-            }
-            counter++;
+            return sectionList.subList(firstIndex, lastIndex + 1);
         }
-        return sectionList.subList(firstIndex, lastIndex);
+        catch (IndexOutOfBoundsException e){
+            System.out.println("ERROR: " + e);
+        }
+        return sectionList;
     }
     public float lineSectionLength(String station1Name, String station2Name){
         float output = 0;
         List<TDASection> subSections = getSubsection(station1Name, station2Name);
-
+        for(TDASection section : subSections){
+            output += section.getDistance();
+        }
         return output;
     }
 
@@ -73,13 +78,16 @@ public class TDALine {
 
     public float lineSectionCost(String station1Name, String station2Name){
         float output = 0;
+        List<TDASection> subSections = getSubsection(station1Name, station2Name);
+        for (TDASection section : subSections){
+            output += section.getCost();
+        }
         return output;
     }
 
     public TDALine lineAddSection(TDASection section){
         sectionList.add(section);
-        TDALine NewLine = new TDALine(id, name, railType, sectionList);
-        return NewLine;
+        return new TDALine(id, name, railType, sectionList);
     }
 
     public boolean isLine(TDALine line){
@@ -89,7 +97,12 @@ public class TDALine {
         boolean firstAndLast = firstStation.getType() == lastStation.getType();
         int counter = 0;
         for (TDASection section : sectionList){
-            counter = counter + 1;
+            if(section.getPoint1().getType().equals(StationType.t) ){
+                counter = counter + 1;
+            }
+        }
+        if(firstAndLast && (counter < 2)){
+            return true;
         }
         return false;
     }

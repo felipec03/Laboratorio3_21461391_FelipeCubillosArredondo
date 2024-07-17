@@ -22,4 +22,13 @@ public class TDADriver {
     public String getName() {
         return name;
     }
+
+    @Override
+    public String toString() {
+        return "TDADriver{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", trainMaker='" + trainMaker + '\'' +
+                '}';
+    }
 }

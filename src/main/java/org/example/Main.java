@@ -43,6 +43,13 @@ public class Main {
         return newTrains;
     }
 
+    public static TDADriver[] addDriver(TDADriver[] drivers, TDADriver newDriver) {
+        TDADriver[] newDrivers = new TDADriver[drivers.length + 1];
+        System.arraycopy(drivers, 0, newDrivers, 0, drivers.length);
+        newDrivers[newDrivers.length - 1] = newDriver;
+        return newDrivers;
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         // Patrón delimitador para la lectura correcta de archivos, uniformemente es un guión
         Pattern delimitador = Pattern.compile(System.lineSeparator() +"|-");
@@ -79,7 +86,7 @@ public class Main {
         }
         archivoSections.close();
 
-        // ARCHIVO LÍNEAS DE METRO
+        // ARCHIVO LINEAS DE METRO
         Scanner archivoLineas = new Scanner(new File("src/main/texto/lines.txt"));
         archivoLineas.useDelimiter(delimitador);
 
@@ -149,8 +156,24 @@ public class Main {
         }
         archivoTrains.close();
 
+        // ARCHIVO DRIVERS
+        Scanner archivoDrivers = new Scanner(new File("src/main/texto/drivers.txt"));
+        archivoDrivers.useDelimiter(delimitador);
+        TDADriver[] driverArray = new TDADriver[0];
+
+        while (archivoDrivers.hasNext()){
+            int newId = archivoDrivers.nextInt();
+            String newName = archivoDrivers.next();
+            String newTrainMaker = archivoDrivers.next();
+            TDADriver newDriver = new TDADriver(newId, newName, newTrainMaker);
+            driverArray = addDriver(driverArray, newDriver);
+        }
+        archivoDrivers.close();
+
+
+        // INICIACION DE MENU
         Menu menu = new Menu();
-        menu.startMenu();
+        menu.startMenu(stationArray, sectionArray, lineArray, pcarArray, trainArray, driverArray);
 
         System.out.println("PROGRAM HAS FINISHED EXECUTING.");
     }
