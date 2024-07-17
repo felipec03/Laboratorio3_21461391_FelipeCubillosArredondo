@@ -31,6 +31,7 @@ public class TDASubway {
         subway.drivers = driverList;
         return subway;
     }
+
     @Override
     public String toString() {
         return "TDASubway{" +
@@ -41,4 +42,6 @@ public class TDASubway {
                 ", trains=" + trains +
                 '}';
     }
+
+    public TDASubway assignTrainToLine
 }

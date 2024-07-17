@@ -164,6 +164,13 @@ public class Menu {
                     break;
                 case 9:
                     System.out.println("Elegido fetchCapacity!");
+
+                    Scanner idI = new Scanner(System.in);
+                    System.out.println("Introduzca el ID del tren a operar: ");
+                    int trainIDI = Integer.parseInt(input.nextLine());
+                    float outputCapacity = trainArray[trainIDI].fetchCapacity();
+                    System.out.println("Capacidad total del tren es de: " + outputCapacity);
+
                     break;
                 case 10:
                     System.out.println("Elegido whereIsTrain!");
