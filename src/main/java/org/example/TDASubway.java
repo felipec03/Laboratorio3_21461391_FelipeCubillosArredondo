@@ -42,6 +42,4 @@ public class TDASubway {
                 ", trains=" + trains +
                 '}';
     }
-
-    public TDASubway assignTrainToLine
 }
