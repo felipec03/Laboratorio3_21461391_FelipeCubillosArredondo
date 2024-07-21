@@ -1,11 +1,74 @@
 0-San Pablo-t-5
-1-USACH-r-5
-2-Estación Central-r-5
-3-Los Heroes-c-5
-4-Santa Ana-c-5
-5-Los Domínicos-t-5
-6-Los Libertadores-t-4
-7-Cardenal Caro-r-4
-8-Plaza de Armas-c-5
-9-Universidad de Chile-c-6
-10-Fernando Castillo Velasco-t-5
+1-Neptuno-r-5
+2-Pajaritos-r-5
+3-Las Rejas-r-5
+4-Ecuador-r-5
+5-San Alberto Hurtado-r-6
+6-Universidad de Santiago-r-5
+7-Estacion Central-r-5
+8-Union Latinoamericana-r-5
+9-Republica-r-6
+10-Los Heroes-c-6
+11-La Moneda-r-6
+12-Universidad de Chile-c-6
+13-Santa Lucía-r-5
+14-Universidad Católica-r-5
+15-Baquedano-c-5
+16-Salvador-r-6
+17-Manuel Montt-r-5
+18-Pedro de Valdivia-r-5
+19-Los Leones-c-6
+20-Tobalada-c-6
+21-El Golf-r-5
+22-Alcantara-r-5
+23-Escuela Militar-r-5
+24-Manquehue-r-6
+25-Hernando de Magallanes-r-6
+26-Los Dominicos-t-5
+27-Vespucio Norte-t-5
+28-Zapadores-r-5
+29-Dorsal-r-5
+30-Einstein-r-5
+31-Cementerios-r-5
+32-Cerro Blanco-r-5
+33-Patronato-r-5
+34-Puente Cal y Canto-c-5
+35-Santa Ana-c-5
+36-Los Heroes-c-5
+37-Toesca-r-5
+38-Parque O Higgins-r-6
+39-Rondizzoni-r-6
+40-Franklin-c-5
+41-El Llano-r-5
+42-San Miguel-r-5
+43-Lo Vial-r-5
+44-Departamental-r-5
+45-Ciudad del Niño-r-5
+46-Lo Ovalle-r-5
+47-El Parron-r-5
+48-La Cisterna-r-5
+49-El Bosque-r-5
+50-Observatorio-r-6
+51-Copa Lo Martinez-r-5
+52-Hospital El Pino-t-5
+53-Plaza Quilicura-t-6
+54-Lo Cruzat-r-6
+55-Ferrocaril-r-6
+56-Los Libertadores-r-6
+57-Cardenal Caro-r-6
+58-Vivaceta-r-6
+59-Conchali-r-6
+60-Plaza Chacabuco-r-6
+61-Hospitales-r-6
+62-Puente Cal y Canto-c-7
+63-Plaza de Armas-c-7
+64-Universidad de Chile-c-7
+65-Parque Almagro-r-6
+66-Matta-r-6
+67-Irarrazaval-c-7
+68-Monsenor Eyzaguirre-r-6
+69-Nunoa-c-7
+70-Chile España-r-6
+71-Villa Frei-r-6
+72-Plaza Egana-c-7
+73-Fernando Castillo Velasco-t-7

@@ -50,6 +50,13 @@ public class Main {
         return newDrivers;
     }
 
+    public static TDASubway[] addSubway(TDASubway[] subways, TDASubway newSubway) {
+        TDASubway[] newSubways = new TDASubway[subways.length + 1];
+        System.arraycopy(subways, 0, newSubways, 0, subways.length);
+        newSubways[newSubways.length - 1] = newSubway;
+        return newSubways;
+    }
+
     public static void main(String[] args) throws FileNotFoundException {
         // Patrón delimitador para la lectura correcta de archivos, uniformemente es un guión
         Pattern delimitador = Pattern.compile(System.lineSeparator() +"|-");
@@ -170,6 +177,19 @@ public class Main {
         }
         archivoDrivers.close();
 
+        // ARCHIVO SUBWAYS
+        Scanner archivoSubways = new Scanner(new File("src/main/texto/subways.txt"));
+        archivoSubways.useDelimiter(delimitador);
+        TDASubway[] subwayArray = new TDASubway[0];
+
+        while (archivoSubways.hasNext()){
+            int newId = archivoSubways.nextInt();
+            String newName = archivoSubways.next();
+
+            TDASubway newSubway = new TDASubway(newId, newName);
+            subwayArray = addSubway(subwayArray, newSubway);
+        }
+        archivoDrivers.close();
 
         // INICIACION DE MENU
         Menu menu = new Menu();
