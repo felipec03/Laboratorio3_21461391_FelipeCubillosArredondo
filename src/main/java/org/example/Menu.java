@@ -2,11 +2,20 @@ package org.example;
 
 import java.util.Scanner;
 
+/**
+ * El menú es una clase que tiene por fin ordenar el código, esta representa por medio del método startMenu el inicio de este.
+ */
 public class Menu {
+    /**
+     * Se utiliza constructor para llamar al menu en main
+     */
     public Menu() {
     }
 
-    public void mostrarOpciones(){
+    /**
+     * Muestra por consola el menú para que el usuario vea las opciones disponibles dentro del sistema
+     */
+    protected void mostrarOpciones(){
         System.out.println("Bienvenido al sistema de metro!");
         System.out.println("------ Opciones para las líneas ------");
         System.out.println("1. LineLength");
@@ -24,7 +33,14 @@ public class Menu {
         System.out.println("11. trainPath");
         System.out.println("12. Retornar al menú de inicio...");
     }
-    public void startMenu(TDAStation[] stationArray, TDASection[] sectionArray, TDALine[] lineArray, TDAPassengerCar[] pcarArray, TDATrain[] trainArray, TDADriver[] driverArray){
+
+    /**
+     * @param lineArray lectura de líneas en main
+     * @param pcarArray lectura de carros en main
+     * @param trainArray lectura de trenes en main
+     * Inicializa el menú con las opciones dentro de un switch case
+     */
+    protected void startMenu(TDALine[] lineArray, TDAPassengerCar[] pcarArray, TDATrain[] trainArray){
         int opcion = 0;
         mostrarOpciones();
         while(opcion != 12){

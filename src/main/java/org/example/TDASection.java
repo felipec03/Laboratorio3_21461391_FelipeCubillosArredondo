@@ -1,11 +1,22 @@
 package org.example;
 
-public class TDASection {
+/**
+ * Una sección en un sistema de metro se puede pensar como el tramo que une a dos estaciones
+ * Esta tiene por fin determinar la distancia y costo entre la conexión entre las estaciones.
+ */
+public class TDASection{
     TDAStation point1;
     TDAStation point2;
     float distance;
     float cost;
 
+    /**
+     *
+     * @param point1 Punto de inicio en la sección
+     * @param point2 Punto de fin en la sección
+     * @param distance Distancia entre los dos puntos seleccionados
+     * @param cost Costo entre los dos puntos seleccionados, variable
+     */
     public TDASection(TDAStation point1, TDAStation point2, float distance, float cost) {
         this.point1 = point1;
         this.point2 = point2;

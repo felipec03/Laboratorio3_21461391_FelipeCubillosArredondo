@@ -1,26 +1,22 @@
 package org.example;
 
+/**
+ * Corresponde a la unidad de un conductor dentro de un sistema de metro
+ */
 public class TDADriver {
-    int id;
+    private final int id;
     String name;
     String trainMaker;
 
+    /**
+     * @param id ID Único e irrepetible del conductor
+     * @param name Nombre asociado al conductor
+     * @param trainMaker Creador del tren que maneja el conductor
+     */
     public TDADriver(int id, String name, String trainMaker) {
         this.id = id;
         this.name = name;
         this.trainMaker = trainMaker;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getTrainMaker() {
-        return trainMaker;
-    }
-
-    public String getName() {
-        return name;
     }
 
     @Override

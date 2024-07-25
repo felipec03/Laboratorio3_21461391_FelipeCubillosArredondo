@@ -2,11 +2,24 @@ package org.example;
 
 import java.util.List;
 
+/**
+ * Corresponde a la representación de una línea en un sistema de metro
+ * Esta contiene, además de atributos descriptivos, una lista con todas las secciones de la linea.
+ */
+
 public class TDALine {
-    int id;
+    private final int id;
     String name;
     String railType;
     List<TDASection> sectionList;
+
+    /**
+     *
+     * @param id ID Irrepetible de una línea, llave primaria
+     * @param name Nombre de la línea en cuestión
+     * @param railType Tipo de riel
+     * @param sectionList Lista de secciones que conforman una línea, se asumen que están en órden creciente y ordenado
+     */
 
     public TDALine(int id, String name, String railType, List<TDASection> sectionList) {
         this.id = id;
@@ -15,22 +28,17 @@ public class TDALine {
         this.sectionList = sectionList;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public String getRailType() {
-        return railType;
     }
 
     public List<TDASection> getSectionList() {
         return sectionList;
     }
 
+    /**
+     * @return Dada una instancia de una línea de metro este método devuelve la longitud total de la línea
+     */
     public float lineLength(){
         float output = 0;
         for(TDASection section : sectionList){
@@ -38,7 +46,13 @@ public class TDALine {
         }
         return output;
     }
-    List<TDASection> getSubsection(String point1, String point2){
+
+    /**
+     * @param point1 Nombre de una estación como String, representa el punto de inicio de izquierda a derecha.
+     * @param point2 Nombre de una estación como String, representa el punto final de izquierda a derecha.
+     * @return Dado dos puntos en una línea devuelve la sublista en el contexto de la instanciación.
+     */
+    private List<TDASection> getSubsection(String point1, String point2){
         try{
             int firstIndex = 0;
             int lastIndex = 0;
@@ -59,6 +73,12 @@ public class TDALine {
         }
         return sectionList;
     }
+
+    /**
+     * @param station1Name Representado cómo String, inicio de la sección
+     * @param station2Name Representado cómo String, fin de la sección
+     * @return Retorna el largo iniciando del punto 1 al punto 2 en el contexto de la línea instanciada,
+     */
     public float lineSectionLength(String station1Name, String station2Name){
         float output = 0;
         List<TDASection> subSections = getSubsection(station1Name, station2Name);
@@ -68,6 +88,9 @@ public class TDALine {
         return output;
     }
 
+    /**
+     * @return Dada una instancia de una línea de metro este método devuelve el costo total de traversar la línea
+     */
     public float lineCost(){
         float output = 0;
         for(TDASection section : sectionList){
@@ -76,6 +99,11 @@ public class TDALine {
         return output;
     }
 
+    /**
+     * @param station1Name Representado cómo String, inicio de la sección
+     * @param station2Name Representado cómo String, fin de la sección
+     * @return Retorna el costo de recorrer iniciando del punto 1 al punto 2 en el contexto de la línea instanciada,
+     */
     public float lineSectionCost(String station1Name, String station2Name){
         float output = 0;
         List<TDASection> subSections = getSubsection(station1Name, station2Name);
@@ -85,11 +113,19 @@ public class TDALine {
         return output;
     }
 
+    /**
+     * @param section Sección instanciada por archivos
+     * @return Nuevo TDALine con la sección añadida al final de la lista de secciones
+     */
     public TDALine lineAddSection(TDASection section){
         sectionList.add(section);
         return new TDALine(id, name, railType, sectionList);
     }
 
+    /**
+     * @param line Linea a verificar
+     * @return true si la línea cumple con los requerimientos: Primera y última estación terminal, etc... false en cualquier otro caso
+     */
     public boolean isLine(TDALine line){
         List<TDASection> sectionList = line.getSectionList();
         TDAStation firstStation = (sectionList.get(0)).getPoint1();
@@ -101,12 +137,12 @@ public class TDALine {
                 counter = counter + 1;
             }
         }
-        if(firstAndLast && (counter < 2)){
-            return true;
-        }
-        return false;
+        return firstAndLast && (counter < 2);
     }
 
+    /**
+     * @return Visualización de la línea
+     */
     @Override
     public String toString() {
         return "TDALine{" +

@@ -1,13 +1,14 @@
 package org.example;
 
-import java.io.File;  // Import the File class
-import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner; // Import the Scanner class to read text files
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class Main {
+public class Main extends Menu{
     public static TDAStation[] addStations(TDAStation[] stations, TDAStation newStation) {
         TDAStation[] newStations = new TDAStation[stations.length + 1];
         System.arraycopy(stations, 0, newStations, 0, stations.length);
@@ -187,14 +188,17 @@ public class Main {
             String newName = archivoSubways.next();
 
             TDASubway newSubway = new TDASubway(newId, newName);
+
+            newSubway = newSubway.addLine(Arrays.asList(lineArray));
+            newSubway = newSubway.addTrain(Arrays.asList(trainArray));
+            newSubway = newSubway.addDrivers(Arrays.asList(driverArray));
+
             subwayArray = addSubway(subwayArray, newSubway);
         }
         archivoDrivers.close();
 
         // INICIACION DE MENU
         Menu menu = new Menu();
-        menu.startMenu(stationArray, sectionArray, lineArray, pcarArray, trainArray, driverArray);
-
-        System.out.println("PROGRAM HAS FINISHED EXECUTING.");
+        menu.startMenu(lineArray, pcarArray, trainArray);
     }
 }

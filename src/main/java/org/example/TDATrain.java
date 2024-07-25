@@ -4,15 +4,23 @@ import java.util.List;
 
 
 /**
- * TDA Train
+ * Corresponde a la representación de un tren dentro de un sistema de metro
+ * Este contiene, además de atributos identificadores, una lista de carros que conforman un convoy.
  */
 public class TDATrain {
-    int id;
+    private final int id;
     String trainMaker;
     float speed;
     float stationStayTime;
     List<TDAPassengerCar> pcarList;
 
+    /**
+     * @param id ID Característico e irrepetible de un tren
+     * @param trainMaker Creador del tren
+     * @param speed Velocidad máxima de un tren
+     * @param stationStayTime Tiempo que un tren espera en una estación
+     * @param pcarList Lista que contiene todos los carros que contiene la instancia del tren
+     */
     public TDATrain(int id, String trainMaker, float speed, float stationStayTime, List<TDAPassengerCar> pcarList) {
         this.id = id;
         this.trainMaker = trainMaker;
@@ -25,29 +33,28 @@ public class TDATrain {
         return trainMaker;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public float getSpeed() {
-        return speed;
-    }
-
-    public List<TDAPassengerCar> getPcarList() {
-        return pcarList;
-    }
-
+    /**
+     * @param pcar Carro a añadir
+     * @param position Posición donde se añada el carro
+     * @return Nueva instancia de tren con el carro añadido
+     */
     public TDATrain addCar(TDAPassengerCar pcar, int position){
         pcarList.add(position, pcar);
-        TDATrain newTrain = new TDATrain(id, trainMaker, speed, stationStayTime, pcarList);
-        return newTrain;
-    }
-    public TDATrain removeCar(int position){
-        pcarList.remove(position);
-        TDATrain newTrain = new TDATrain(id, trainMaker, speed, stationStayTime, pcarList);
-        return newTrain;
+        return new TDATrain(id, trainMaker, speed, stationStayTime, pcarList);
     }
 
+    /**
+     * @param position Posición que se desea eliminar el carro de un tren
+     * @return Instancia de tren con el carro eliminado en posición deseada
+     */
+    public TDATrain removeCar(int position){
+        pcarList.remove(position);
+        return new TDATrain(id, trainMaker, speed, stationStayTime, pcarList);
+    }
+
+    /**
+     * @return Cantidad total de un tren de sostener personas
+     */
     public int fetchCapacity(){
         int output = 0;
         for(TDAPassengerCar curPcar : pcarList){
@@ -56,12 +63,18 @@ public class TDATrain {
         return output;
     }
 
+    /**
+     * @return true si el tren cumple con todos los requerimientos dados: Primero y último carro terminal, etc... false en cualquier otro caso
+     */
     public boolean isTrain(){
         TDAPassengerCar firstPcar = (pcarList.get(0));
         TDAPassengerCar lastPcar = (pcarList.get(pcarList.size() - 1));
         return (firstPcar.getType().equals(CarType.t)) && (lastPcar.getType().equals(CarType.t));
     }
 
+    /**
+     * @return Visualización del tren instanciado
+     */
     public String traintoString() {
         return "TDATrain{" +
                 "id=" + id +

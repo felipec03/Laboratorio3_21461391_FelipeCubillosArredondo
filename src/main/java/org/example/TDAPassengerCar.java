@@ -1,16 +1,29 @@
 package org.example;
 
-enum CarType
-{
+/**
+ * Declara el tipo de carro, osease, si es regular o terminal (reside en los extremos)
+ */
+enum CarType {
     r, t
 }
+
+/**
+ * Unidad básica del tren, esta representa un carro singular en un convoy, con sus atributos característicos
+ */
 public class TDAPassengerCar {
-    int id;
+    private final int id;
     int passengerCapacity;
     String model;
     String trainMaker;
     CarType type;
 
+    /**
+     * @param id ID Característico e irrepetible del carro
+     * @param passengerCapacity Capacidad que tiene un carro de sostener una cantidad de personas
+     * @param model Modelo del carro
+     * @param trainMaker Creador del carro
+     * @param type Tipo de carro en cuestión, regular o terminal.
+     */
     public TDAPassengerCar(int id, int passengerCapacity, String model, String trainMaker, CarType type) {
         this.id = id;
         this.passengerCapacity = passengerCapacity;
@@ -19,20 +32,8 @@ public class TDAPassengerCar {
         this.type = type;
     }
 
-    public int getId() {
-        return id;
-    }
-
     public int getPassengerCapacity() {
         return passengerCapacity;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getTrainMaker() {
-        return trainMaker;
     }
 
     public CarType getType() {
