@@ -75,7 +75,8 @@ public class TDATrain {
     /**
      * @return Visualización del tren instanciado
      */
-    public String traintoString() {
+    @Override
+    public String toString() {
         return "TDATrain{" +
                 "id=" + id +
                 ", trainMaker='" + trainMaker + '\'' +

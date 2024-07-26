@@ -58,16 +58,20 @@ public class TDASubway {
     }
 
     /**
-     * @return Visualización del sistema de metro en su totalidad.
+     * Visualización del sistema de metro en su totalidad.
      */
-    @Override
-    public String toString() {
-        return "TDASubway{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", drivers=" + drivers +
-                ", lines=" + lines +
-                ", trains=" + trains +
-                '}';
+    public void SubwayToString() {
+        System.out.println("Linea de metro a trabajar " + name);
+        System.out.println("Id: " + id);
+        System.out.println("Nombre: " + name );
+        for (TDADriver driver : drivers) {
+            System.out.println(driver);
+        }
+        for (TDALine line : lines) {
+            System.out.println(line);
+        }
+        for (TDATrain train : trains) {
+            System.out.println(train);
+        }
     }
 }

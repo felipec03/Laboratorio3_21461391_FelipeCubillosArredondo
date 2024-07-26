@@ -198,6 +198,7 @@ public class Main extends Menu{
         archivoDrivers.close();
 
         // INICIACION DE MENU
+        subwayArray[0].SubwayToString();
         Menu menu = new Menu();
         menu.startMenu(lineArray, pcarArray, trainArray);
     }
