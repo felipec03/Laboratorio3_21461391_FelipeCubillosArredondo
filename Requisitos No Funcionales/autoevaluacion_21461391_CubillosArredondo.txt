@@ -1,0 +1,46 @@
+***AUTOEVALUACIÓN***
+Felipe Antonio Cubillos Arredondo
+21.461.391-3
+
+*Requisitos NO Funcionales*
+- Autoevaluación: 1
+- Lenguaje y herramientas: 1
+- SDK: 1
+- IDE: 1
+- Gradle: 1
+- Interacciones con el programa: 1
+- Uso del paradigma: 1
+- Prerrequisitos: 1
+- JavaDoc: 1
+- Organización del código: 0,75
+- Diagrama de Análisis: 0,75
+- Diagrama de Diseño: 0,75
+- Uso de Git: 0,75
+
+*Requisitos Funcionales*
+- Clases y estructura: 1
+- Menú Interactivo: 1
+- TDA STATION - constructor: 1
+- TDA SECTION - constructor: 1
+- TDA LINE - constructor: 1
+- TDA LINE - lineLength: 1
+- TDA LINE - lineSectionLength: 1
+- TDA LINE - lineCost: 1
+- TDA LINE - lineSectionCost: 1
+- TDA LINE - lineAddSection: 1
+- TDA LINE - isLine: 1
+- TDA PCAR - constructor: 1
+- TDA TRAIN - constructor: 1
+- TDA TRAIN - train-add-car: 1
+- TDA TRAIN - train-remove-car: 1
+- TDA TRAIN - isTrain: 1
+- TDA TRAIN - trainCapacity: 1
+- TDA DRIVER - constructor: 1
+- TDA SUBWAY - constructor: 1
+- TDA SUBWAY - addTrain: 1
+- TDA SUBWAY - addLine: 1
+- TDA SUBWAY - addDriver: 1
+- TDA SUBWAY - subwayToString: 1
+- TDA SUBWAY - whereIsTrain: 0
+- TDA SUBWAY - subwayTrainPath: 0
+
