@@ -19,6 +19,9 @@ public class TDADriver {
         this.trainMaker = trainMaker;
     }
 
+    /**
+     * @return Visualización de un conductor
+     */
     @Override
     public String toString() {
         return "TDADriver: " +
