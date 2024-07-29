@@ -17,6 +17,7 @@ public class Menu {
      */
     protected void mostrarOpciones(){
         System.out.println("Bienvenido al sistema de metro!");
+        System.out.println("0. Visualizar sistema de metro a visualizar");
         System.out.println("------ Opciones para las líneas ------");
         System.out.println("1. LineLength");
         System.out.println("2. lineSectionLength");
@@ -40,8 +41,8 @@ public class Menu {
      * @param trainArray lectura de trenes en main
      * Inicializa el menú con las opciones dentro de un switch case
      */
-    protected void startMenu(TDALine[] lineArray, TDAPassengerCar[] pcarArray, TDATrain[] trainArray){
-        int opcion = 0;
+    protected void startMenu(TDALine[] lineArray, TDAPassengerCar[] pcarArray, TDATrain[] trainArray, TDASubway[] subwayArray){
+        int opcion = -1;
         mostrarOpciones();
         while(opcion != 12){
             Scanner input = new Scanner(System.in);
@@ -50,6 +51,11 @@ public class Menu {
             opcion = Integer.parseInt(input.nextLine());
 
             switch(opcion){
+
+                case 0:
+                    System.out.println("Sitema de metro trabajado: ");
+                    subwayArray[0].SubwayToString();
+                    break;
                 case 1:
                     System.out.println("Elegido lineLength!");
                     Scanner id = new Scanner(System.in);
