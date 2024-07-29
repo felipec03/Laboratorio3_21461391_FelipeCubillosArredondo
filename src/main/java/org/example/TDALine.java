@@ -141,15 +141,14 @@ public class TDALine {
     }
 
     /**
-     * @return Visualización de la línea
+     * Visualización de la línea
      */
-    @Override
-    public String toString() {
-        return "TDALine{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", railType='" + railType + '\'' +
-                ", sectionList=" + sectionList +
-                '}';
+    public void lineToString() {
+        System.out.println("ID: " + id);
+        System.out.println("Nombre: " + name);
+        System.out.println("Tipo de rail: " + railType);
+        for (TDASection section : sectionList) {
+            section.sectionToString();
+        }
     }
 }

@@ -17,6 +17,7 @@ public class Menu {
      */
     protected void mostrarOpciones(){
         System.out.println("Bienvenido al sistema de metro!");
+        System.out.println("------ Opciones miscelaneas ------");
         System.out.println("0. Visualizar sistema de metro a visualizar");
         System.out.println("------ Opciones para las líneas ------");
         System.out.println("1. LineLength");
@@ -147,7 +148,7 @@ public class Menu {
                     trainArray[trainIDF] = trainArray[trainIDF].addCar(pcarArray[pcarIDInt], positionInt);
 
                     System.out.println("Tren actualizado: ");
-                    System.out.println(trainArray[trainIDF].toString());
+                    trainArray[trainIDF].trainToString();
                     break;
                 case 7:
                     System.out.println("Elegido trainRemoveCar!");
@@ -166,7 +167,7 @@ public class Menu {
                     trainArray[trainIDG] = trainArray[trainIDG].removeCar(positionRemoveInt);
 
                     System.out.println("Tren actualizado: ");
-                    System.out.println(trainArray[trainIDG].toString());
+                    trainArray[trainIDG].trainToString();
 
                     break;
                 case 8:

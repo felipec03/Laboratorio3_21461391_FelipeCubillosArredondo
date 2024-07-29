@@ -62,16 +62,26 @@ public class TDASubway {
      */
     public void SubwayToString() {
         System.out.println("Linea de metro a trabajar " + name);
-        System.out.println("Id: " + id);
-        System.out.println("Nombre: " + name );
+        System.out.println("Id asociado: " + id);
+        System.out.println("---------------------------------------------------");
+        System.out.println("Lista de conductores en circulación: ");
         for (TDADriver driver : drivers) {
-            System.out.println(driver);
+            System.out.println(driver.toString());
         }
+        System.out.println("---------------------------------------------------");
+        System.out.println("Lista de líneas activas en el sistema de metro: ");
         for (TDALine line : lines) {
-            System.out.println(line);
+            line.lineToString();
+            System.out.println("---------------------------------------------------");
         }
+
+        System.out.println("---------------------------------------------------");
+        System.out.println("Lista de trenes activos en el sistema de metro");
         for (TDATrain train : trains) {
-            System.out.println(train);
+            train.trainToString();
+            System.out.println("---------------------------------------------------");
         }
+
+
     }
 }

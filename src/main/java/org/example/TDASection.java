@@ -40,13 +40,11 @@ public class TDASection{
         return cost;
     }
 
-    @Override
-    public String toString() {
-        return "TDASection{" +
-                "point1=" + point1 +
-                ", point2=" + point2 +
-                ", distance=" + distance +
-                ", cost=" + cost +
-                '}';
+
+    public void sectionToString() {
+        point1.stationToString();
+        point2.stationToString();
+        System.out.println("Distancia: " + distance);
+        System.out.println("Costo: " + cost);
     }
 }

@@ -21,10 +21,9 @@ public class TDADriver {
 
     @Override
     public String toString() {
-        return "TDADriver{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", trainMaker='" + trainMaker + '\'' +
-                '}';
+        return "TDADriver: " +
+                "id: " + id +
+                ", name: " + name + '\'' +
+                ", trainMaker: '" + trainMaker + '\'';
     }
 }

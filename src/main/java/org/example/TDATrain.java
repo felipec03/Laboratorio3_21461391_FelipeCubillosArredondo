@@ -73,17 +73,16 @@ public class TDATrain {
     }
 
     /**
-     * @return Visualización del tren instanciado
+     *  Visualización del tren instanciado
      */
-    @Override
-    public String toString() {
-        return "TDATrain{" +
-                "id=" + id +
-                ", trainMaker='" + trainMaker + '\'' +
-                ", speed=" + speed +
-                ", stationStayTime=" + stationStayTime +
-                ", pcarList=" + pcarList +
-                '}';
+    public void trainToString() {
+        System.out.println("ID: "+ id);
+        System.out.println("Train Maker: " + trainMaker);
+        System.out.println("Speed: " + speed);
+        System.out.println("Station Stay Time: " + stationStayTime);
+        for (TDAPassengerCar car : pcarList) {
+            System.out.println(car);
+        }
     }
 }
 

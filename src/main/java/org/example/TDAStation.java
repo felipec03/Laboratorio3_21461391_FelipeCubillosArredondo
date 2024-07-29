@@ -40,13 +40,8 @@ public class TDAStation {
         return type;
     }
 
-    @Override
-    public String toString() {
-        return "TDAStation{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", type=" + type +
-                ", stopTime=" + stopTime +
-                '}';
+
+    public void stationToString() {
+        System.out.println("ID: " + id + " Name: " + name + " Type: " + type + " Stop Time: " + stopTime);
     }
 }
