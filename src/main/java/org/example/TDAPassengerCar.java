@@ -10,7 +10,7 @@ enum CarType {
 /**
  * Unidad básica del tren, esta representa un carro singular en un convoy, con sus atributos característicos
  */
-public class TDAPassengerCar {
+public class TDAPassengerCar implements InterfazPassengerCar{
     private final int id;
     int passengerCapacity;
     String model;

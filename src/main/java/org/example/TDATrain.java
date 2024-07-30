@@ -7,7 +7,7 @@ import java.util.List;
  * Corresponde a la representación de un tren dentro de un sistema de metro
  * Este contiene, además de atributos identificadores, una lista de carros que conforman un convoy.
  */
-public class TDATrain {
+public class TDATrain implements InterfazTrain{
     private final int id;
     String trainMaker;
     float speed;

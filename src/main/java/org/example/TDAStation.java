@@ -10,7 +10,7 @@ enum StationType{
 /**
  * La estación es la unidad más básica de la línea, esta tiene sus atributos característicos además de un tipo de estación
  */
-public class TDAStation {
+public class TDAStation implements InterfazStation {
     private final int id;
     String name;
     StationType type;

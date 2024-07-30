@@ -7,7 +7,7 @@ import java.util.List;
  * Esta contiene, además de atributos descriptivos, una lista con todas las secciones de la linea.
  */
 
-public class TDALine {
+public class TDALine implements InterfazLine {
     private final int id;
     String name;
     String railType;
@@ -52,7 +52,7 @@ public class TDALine {
      * @param point2 Nombre de una estación como String, representa el punto final de izquierda a derecha.
      * @return Dado dos puntos en una línea devuelve la sublista en el contexto de la instanciación.
      */
-    private List<TDASection> getSubsection(String point1, String point2){
+    public List<TDASection> getSubsection(String point1, String point2){
         try{
             int firstIndex = 0;
             int lastIndex = 0;

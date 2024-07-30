@@ -6,7 +6,7 @@ import java.util.List;
  * Clase de mayor presedencia en el proyecto, esta contiene todas las otras clases previemanete definidas
  * Representa un sistema de metro en su totalidad
  */
-public class TDASubway {
+public class TDASubway implements InterfazSubway{
     private final int id;
     String name;
     List<TDADriver> drivers;
@@ -81,7 +81,5 @@ public class TDASubway {
             train.trainToString();
             System.out.println("---------------------------------------------------");
         }
-
-
     }
 }

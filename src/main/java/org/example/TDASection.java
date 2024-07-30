@@ -4,7 +4,7 @@ package org.example;
  * Una sección en un sistema de metro se puede pensar como el tramo que une a dos estaciones
  * Esta tiene por fin determinar la distancia y costo entre la conexión entre las estaciones.
  */
-public class TDASection{
+public class TDASection implements InterfazSection{
     TDAStation point1;
     TDAStation point2;
     float distance;

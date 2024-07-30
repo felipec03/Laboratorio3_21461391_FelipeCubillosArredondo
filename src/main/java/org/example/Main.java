@@ -8,7 +8,18 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * Centro del proyecto
+ * La implementación en cuestión instancia lo que se encuentre en los archivos en forma de atributos
+ * Estos una vez leídos son guardados en arreglos globales que son accesibles por el main
+ * Para almacenar los objetos se incertan con los métodos add+Clase
+ */
 public class Main extends Menu{
+    /**
+     * @param stations Arreglo de estaciones
+     * @param newStation Estación a añadir
+     * @return Arreglo con estación añadida
+     */
     public static TDAStation[] addStations(TDAStation[] stations, TDAStation newStation) {
         TDAStation[] newStations = new TDAStation[stations.length + 1];
         System.arraycopy(stations, 0, newStations, 0, stations.length);
@@ -16,6 +27,11 @@ public class Main extends Menu{
         return newStations;
     }
 
+    /**
+     * @param sections Arreglo de secciones
+     * @param newSection Sección a añadir
+     * @return Arreglo con sección añadida
+     */
     public static TDASection[] addSections(TDASection[] sections, TDASection newSection) {
         TDASection[] newSections = new TDASection[sections.length + 1];
         System.arraycopy(sections, 0, newSections, 0, sections.length);
@@ -23,6 +39,11 @@ public class Main extends Menu{
         return newSections;
     }
 
+    /**
+     * @param lines Arreglo de lineas
+     * @param newLine Linea a añadir
+     * @return Arreglo con linea añadida
+     */
     public static TDALine[] addLine(TDALine[] lines, TDALine newLine) {
         TDALine[] newLines = new TDALine[lines.length + 1];
         System.arraycopy(lines, 0, newLines, 0, lines.length);
@@ -30,6 +51,11 @@ public class Main extends Menu{
         return newLines;
     }
 
+    /**
+     * @param pcars Arreglo de pcars
+     * @param newPcar Pcar a añadir
+     * @return Arreglo con pcar añadido
+     */
     public static TDAPassengerCar[] addPcar(TDAPassengerCar[] pcars, TDAPassengerCar newPcar) {
         TDAPassengerCar[] newPcars = new TDAPassengerCar[pcars.length + 1];
         System.arraycopy(pcars, 0, newPcars, 0, pcars.length);
@@ -37,6 +63,11 @@ public class Main extends Menu{
         return newPcars;
     }
 
+    /**
+     * @param trains Arreglo de trenes
+     * @param newTrain Tren a añadir
+     * @return Arreglo con tren añadido
+     */
     public static TDATrain[] addTrain(TDATrain[] trains, TDATrain newTrain) {
         TDATrain[] newTrains = new TDATrain[trains.length + 1];
         System.arraycopy(trains, 0, newTrains, 0, trains.length);
@@ -44,6 +75,11 @@ public class Main extends Menu{
         return newTrains;
     }
 
+    /**
+     * @param drivers Arreglo de conductores
+     * @param newDriver Conductor a añadir
+     * @return Arreglo con conductor añadido
+     */
     public static TDADriver[] addDriver(TDADriver[] drivers, TDADriver newDriver) {
         TDADriver[] newDrivers = new TDADriver[drivers.length + 1];
         System.arraycopy(drivers, 0, newDrivers, 0, drivers.length);
@@ -51,6 +87,11 @@ public class Main extends Menu{
         return newDrivers;
     }
 
+    /**
+     * @param subways Arreglo con subways
+     * @param newSubway Subway a añadir
+     * @return Arreglo con subway añadido
+     */
     public static TDASubway[] addSubway(TDASubway[] subways, TDASubway newSubway) {
         TDASubway[] newSubways = new TDASubway[subways.length + 1];
         System.arraycopy(subways, 0, newSubways, 0, subways.length);

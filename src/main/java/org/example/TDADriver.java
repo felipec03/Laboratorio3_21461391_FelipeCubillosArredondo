@@ -3,7 +3,7 @@ package org.example;
 /**
  * Corresponde a la unidad de un conductor dentro de un sistema de metro
  */
-public class TDADriver {
+public class TDADriver implements InterfazDriver {
     private final int id;
     String name;
     String trainMaker;
@@ -13,7 +13,7 @@ public class TDADriver {
      * @param name Nombre asociado al conductor
      * @param trainMaker Creador del tren que maneja el conductor
      */
-    public TDADriver(int id, String name, String trainMaker) {
+    public TDADriver(int id, String name, String trainMaker){
         this.id = id;
         this.name = name;
         this.trainMaker = trainMaker;
