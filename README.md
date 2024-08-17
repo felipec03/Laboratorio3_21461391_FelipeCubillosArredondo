@@ -36,9 +36,17 @@ En ese caso, indica que la variable de entorno, JAVA_HOME no está bien configur
 ```
 readlink -f $(which java)
 ```
-**El resultado de este comando se debe poner en la siguiente línea de código, en el espacio de path, incluídos paréntesis.**
+
+**Un ejemplo podría ser**
+
+```
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java
+# Debería ser cambiado a:
+/usr/lib/jvm/java-11-openjdk-amd64
+# Excluyendo /bin/java
+```
+**El resultado de este comando se debe poner en la siguiente línea de código excluyendo /bin/java, en el espacio de path, incluídas las comillas.**
 ```
 export JAVA_HOME="path"
 ```
-
 Luego, habría que repetir la secuencia de build y run.
