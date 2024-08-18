@@ -135,7 +135,7 @@ public class Menu {
                     int trainIDF= Integer.parseInt(input.nextLine());
 
                     System.out.println("Se ha elegido el siguiente tren: ");
-                    System.out.println(trainArray[trainIDF].toString());
+                    trainArray[trainIDF].trainToString();
 
                     Scanner pcarID = new Scanner(System.in);
                     System.out.println("Introduzca el ID del carro a introducir en tren de " + trainArray[trainIDF].getTrainMaker() + ": ");
@@ -158,7 +158,7 @@ public class Menu {
                     int trainIDG= Integer.parseInt(input.nextLine());
 
                     System.out.println("Se ha elegido el siguiente tren: ");
-                    System.out.println(trainArray[trainIDG].toString());
+                    trainArray[trainIDG].trainToString();
 
                     Scanner positionRemove = new Scanner(System.in);
                     System.out.println("Introduzca la posición: ");
